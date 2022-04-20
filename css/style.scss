@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Merienda+One&display=swap');
+
+$mainColor: #1A7F72;
+$textColor: #000000;
+$bodyTextColor: rgba(0, 0, 0, 0.5);
+$subtitleColor: rgba(0, 0, 0, 0.8);
+$buttonBg: linear-gradient(180deg, #259385 0%, #159685 100%);
+$buttonShadow: 0px 13px 28px rgba(26, 127, 114, 0.2);;
+$maxWidth: 1680;
+
+@mixin adaptiv-font($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$maxWidth: $maxWidth - 320;
+	font-size: calc(
+		#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth})
+	);
+}
+
+*,
+*:before,
+*:after {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+:focus,
+:active {
+	outline: none;
+}
+
+a,
+a:visited {
+	text-decoration: none;
+}
+
+ul li {
+	list-style: none;
+}
+
+body {
+	font-family: 'Heebo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	color: $textColor;
+}
+
+.container {
+    max-width: 1480px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.title {
+    font-family: 'Merienda One', cursive;
+    @include adaptiv-font(54, 34);
+    line-height: 130%;
+    color: $textColor;
+}
+
+.sub-title {
+    font-weight: 500;
+    font-size: 32px;
+    color: $subtitleColor
+}
+
+.button {
+    background: $buttonBg;
+    box-shadow: $buttonShadow;
+    border-radius: 30px;
+    padding: 12px 44px;
+    color: #fff;
+}
+
+.header {
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+    overflow-y: hidden;
+    background-color: #fff;
+    padding: 10px 0 0 0;
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    &__logo {
+        max-width: 87px;
+        img {
+            width: 100%;
+        }
+    }
+
+    .menu {
+        &__list {
+            display: flex;
+            gap: 30px;
+        }
+        &__link {
+            display: block;
+            position: relative;
+            padding: 16px 10px;
+            @include adaptiv-font(18, 14);
+            line-height: 47px;
+            color: inherit;
+            transition: all 0.3s ease;
+            &:hover {
+                color: $mainColor;
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+@media(max-width: 767px) {
+    .header { 
+        padding-top: 50px;
+        &__container {
+            flex-direction: column;
+        }
+        &__logo {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translate(-50%);
+            z-index: 99;
+            max-width: 58px;
+        }
+        .menu {
+            width: 100%;
+            align-self: center;
+            &__list {
+                gap: 20px;
+            }
+            &__item {
+                min-width: 86px;
+            }
+            &__link {
+                display: block;
+                position: relative;
+                padding: 4px 10px;
+            }
+        }
+    }
+}
