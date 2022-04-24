@@ -535,3 +535,106 @@ body {
         }
     }
 }
+
+.meditation {
+    padding: 154px 0;
+    background: url(../images/meditation-bg.svg) top  no-repeat;
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__title {
+        margin-bottom: 22px;
+    }
+
+    &__text {
+        max-width: 1105px;
+        @include adaptiv-font(22, 14);
+        text-align: center;
+        color: $bodyTextColor;
+        margin-bottom: 69px;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 74px;
+    }
+
+    &__col {
+        max-width: 597px;
+    }
+
+    &__item {
+        padding: 25px 35px;
+        border-radius: 10px;
+        border: 1px solid #378377;
+        background: linear-gradient(to left, #C3EEE8 0%, rgba(#E7F3F2, 0.4) 100%);
+        text-align: right;
+        &:not(:last-child) {
+            margin-bottom: 40px;
+        }
+        &_title {
+            margin-bottom: 10px;
+        }
+        &_text {
+            @include adaptiv-font(18, 14);
+            color: $bodyTextColor;
+            line-height: 130%;
+        }
+        &.right {
+            background: linear-gradient(to right, #C3EEE8 0%, rgba(#E7F3F2, 0.4) 100%);
+            text-align: left;
+        }
+    }
+}
+
+@media(max-width: 1199px) {
+    .meditation {      
+        &__img {
+            max-width: 200px;
+            img {
+                width: 100%;
+            }
+         } 
+    }
+}
+
+@media(max-width: 991px) {
+    .meditation {      
+        &__wrapper {
+            flex-direction: column;
+            gap: 40px;
+        }
+        &__item { 
+            background: linear-gradient(to right, #C3EEE8 0%, rgba(#E7F3F2, 0.4) 100%);
+            text-align: left;
+        }
+        &__img {
+            display: none;
+         } 
+    }
+}
+
+@media(max-width: 767px) {
+    .meditation {
+        &__wrapper {
+            gap: 20px;
+        }      
+        &__item {
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+@media(max-width: 480px) {
+    .meditation { 
+        &__item {
+            padding: 15px;
+        }
+    }
+}
