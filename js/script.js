@@ -1,5 +1,4 @@
 const practiceItems = document.querySelectorAll('.practice__item');
-document.querySelector
 
 practiceItems.forEach(item => {
     item.addEventListener('click', () => {
@@ -14,3 +13,22 @@ practiceItems.forEach(item => {
         }
     });
 });
+
+const playBtns = document.querySelectorAll('.music__item_play');
+
+playBtns.forEach(item => {
+    item.addEventListener('click', () => { 
+        const audio = item.querySelector('audio');
+        const playImg = item.querySelector('img');
+        if(!item.classList.contains('active')) {
+            item.classList.add('active');
+            audio.play();
+            playImg.src = './images/stop.svg' ;
+        } else {
+            item.classList.remove('active');
+            audio.pause();
+            playImg.src = './images/play.svg';
+        }   
+    });
+});
+

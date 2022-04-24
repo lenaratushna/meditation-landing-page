@@ -397,10 +397,141 @@ body {
      }
 }
 
+@media(max-width: 767px) {
+    .practice {
+        padding: 77px 0 21px;
+    }
+}
+
 @media(max-width: 480px) {
     .practice {
         &__text {
             margin-bottom: 40px;
         }
      }
+}
+
+.music {
+    padding: 59px 0;
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        &::before {
+            position: absolute;
+            content: '';
+            display: block;
+            background: url(../images/decor-2.svg) no-repeat;
+            top: 0;
+            left: 0px;
+            width: 140px;
+            height: 185px;
+        }
+    }
+    &__title {
+        margin-bottom: 22px;
+    }
+    &__text {
+        max-width: 1105px;
+        @include adaptiv-font(22, 14);
+        text-align: center;
+        color: $bodyTextColor;
+        margin-bottom: 10px;
+    }
+    &__body {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__wrapper {
+        width: 550px;
+    }
+
+    &__item {
+        padding: 25px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: 
+            linear-gradient(to right, transparent, #ddf4ef) padding-box,
+            linear-gradient(to right, rgba(#1E9787, 0.5), rgba(#1E9787, 0.2)) border-box;
+        border-radius: 10px;
+        border: 1px solid transparent;
+        &:not(:last-child) {
+            margin-bottom: 50px;
+        }
+        &_info-title {
+            @include adaptiv-font(20, 14);
+            margin-bottom: 10px;
+        }
+        &_info-performer {
+            @include adaptiv-font(18, 12);
+            color: $bodyTextColor;
+        }
+        &_play {
+            cursor: pointer;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: $buttonBg;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                width: 20px;
+            }
+        }
+    }
+
+    &__img {
+        max-width: 740px;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+@media(max-width: 991px) {
+    .music {
+        &__text { 
+            margin-bottom: 50px;
+        }
+        &__body {
+            flex-direction: column;
+        }
+        &__img {
+            display: none;
+        }
+     }
+}
+
+@media(max-width: 630px) {
+    .music {
+        &__wrapper {
+            width: 100%;
+        }
+    }
+}
+
+@media(max-width: 400px) {
+    .music {
+        &__item {
+            padding: 15px 20px;
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+            &_info-title {
+                margin-bottom: 5px;
+            }
+            &_play {
+                width: 40px;
+                height: 40px;
+                img {
+                    width: 14px;
+                }
+            }
+        }
+    }
 }
