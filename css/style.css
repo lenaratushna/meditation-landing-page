@@ -49,9 +49,9 @@ body {
   background: linear-gradient(180deg, #259385 0%, #159685 100%);
   -webkit-box-shadow: 0px 13px 28px rgba(26, 127, 114, 0.2);
           box-shadow: 0px 13px 28px rgba(26, 127, 114, 0.2);
-  font-size: calc( 14px + 10 * ((100vw - 320px) / 1360) );
+  font-size: calc( 14px + 6 * ((100vw - 320px) / 1360) );
   border-radius: 30px;
-  padding: 12px 44px;
+  padding: 12px 38px;
   color: #fff;
   border: 1px solid  transparent;
   -webkit-transition: all 0.3s ease;
@@ -450,14 +450,15 @@ body {
             flex-direction: column; }
   .music__img {
     display: none; } }
+@media (max-width: 767px) {
+  .music__item:not(:last-child) {
+    margin-bottom: 20px; } }
 @media (max-width: 630px) {
   .music__wrapper {
     width: 100%; } }
 @media (max-width: 400px) {
   .music__item {
     padding: 15px 20px; }
-    .music__item:not(:last-child) {
-      margin-bottom: 20px; }
     .music__item_info-title {
       margin-bottom: 5px; }
     .music__item_play {
@@ -539,6 +540,8 @@ body {
   .meditation__img {
     display: none; } }
 @media (max-width: 767px) {
+  .meditation__text {
+    margin-bottom: 50px; }
   .meditation__wrapper {
     gap: 20px; }
   .meditation__item:not(:last-child) {
@@ -546,5 +549,73 @@ body {
 @media (max-width: 480px) {
   .meditation__item {
     padding: 15px; } }
+.practices {
+  padding: 50px 0; }
+  .practices__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .practices__title {
+    max-width: 578px;
+    margin-bottom: 22px; }
+  .practices__text {
+    max-width: 1105px;
+    font-size: calc( 14px + 8 * ((100vw - 320px) / 1360) );
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 70px; }
+  .practices__wrapper {
+    width: 90%; }
+  .practices__item {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    gap: 30px; }
+    .practices__item:not(:last-child) {
+      margin-bottom: 70px; }
+    .practices__item_img {
+      max-width: 550px; }
+      .practices__item_img img {
+        width: 100%; }
+    .practices__item_wrapper {
+      max-width: 600px; }
+    .practices__item_title {
+      margin-bottom: 17px; }
+    .practices__item_text {
+      font-size: calc( 14px + 4 * ((100vw - 320px) / 1360) );
+      color: rgba(0, 0, 0, 0.5);
+      line-height: 130%;
+      margin-bottom: 7px; }
+    .practices__item_button {
+      margin-top: 23px; }
+
+@media (max-width: 767px) {
+  .practices__text {
+    margin-bottom: 50px; }
+  .practices__item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    .practices__item:not(:last-child) {
+      margin-bottom: 50px; }
+    .practices__item_img {
+      max-width: 350px; }
+      .practices__item_img img {
+        width: 100%; } }
 
 /*# sourceMappingURL=style.css.map */

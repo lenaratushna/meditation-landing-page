@@ -71,9 +71,9 @@ body {
     display: inline-block;
     background: $buttonBg;
     box-shadow: $buttonShadow;
-    @include adaptiv-font(24, 14);
+    @include adaptiv-font(20, 14);
     border-radius: 30px;
-    padding: 12px 44px;
+    padding: 12px 38px;
     color: #fff;
     border: 1px solid  transparent;
     transition: all 0.3s ease;
@@ -507,6 +507,16 @@ body {
      }
 }
 
+@media(max-width: 767px) {
+    .music {
+        &__item {
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
 @media(max-width: 630px) {
     .music {
         &__wrapper {
@@ -519,9 +529,6 @@ body {
     .music {
         &__item {
             padding: 15px 20px;
-            &:not(:last-child) {
-                margin-bottom: 20px;
-            }
             &_info-title {
                 margin-bottom: 5px;
             }
@@ -620,6 +627,9 @@ body {
 
 @media(max-width: 767px) {
     .meditation {
+        &__text {
+            margin-bottom: 50px;
+        }
         &__wrapper {
             gap: 20px;
         }      
@@ -635,6 +645,82 @@ body {
     .meditation { 
         &__item {
             padding: 15px;
+        }
+    }
+}
+
+.practices {
+    padding: 50px 0;
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title {
+        max-width: 578px;
+        margin-bottom: 22px;
+    }
+
+    &__text {
+        max-width: 1105px;
+        @include adaptiv-font(22, 14);
+        text-align: center;
+        color: $bodyTextColor;
+        margin-bottom: 70px;
+    }
+    &__wrapper {
+        width: 90%;
+    }
+    &__item {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        &:not(:last-child) {
+            margin-bottom: 70px;
+        }
+        &_img {
+            max-width: 550px;
+            img {
+                width: 100%;
+            }
+        }
+        &_wrapper {
+            max-width: 600px;
+        }
+        &_title {
+            margin-bottom: 17px;
+        }
+        &_text{
+            @include adaptiv-font(18, 14);
+            color: $bodyTextColor;
+            line-height: 130%;
+            margin-bottom: 7px;
+        }
+        &_button {
+            margin-top: 23px;
+        }
+    }
+}
+
+@media(max-width:767px) {
+    .practices { 
+        &__text {
+            margin-bottom: 50px;
+        }
+        &__item {
+            flex-direction: column;
+            &:not(:last-child) {
+                margin-bottom: 50px;
+            }
+            &_img {
+                max-width: 350px;
+                img {
+                    width: 100%;
+                }
+            }
         }
     }
 }
