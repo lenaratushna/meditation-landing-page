@@ -617,5 +617,78 @@ body {
       max-width: 350px; }
       .practices__item_img img {
         width: 100%; } }
+.footer {
+  padding: 100px 0 20px;
+  background: url(../images/footer-bg.svg) top no-repeat; }
+  .footer__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .footer__logo {
+    max-width: 77px;
+    margin-bottom: 20px; }
+    .footer__logo img {
+      width: 100%; }
+  .footer .menu {
+    margin-bottom: 20px; }
+    .footer .menu__list {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      gap: 10px; }
+    .footer .menu__item {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      position: relative; }
+      .footer .menu__item:not(:last-child) {
+        margin-right: 10px; }
+        .footer .menu__item:not(:last-child)::after {
+          position: absolute;
+          content: '';
+          display: block;
+          width: 1px;
+          height: 100%;
+          background-color: #000;
+          top: 0;
+          right: -10px; }
+    .footer .menu__link {
+      display: inline-block;
+      font-size: calc( 11px + 5 * ((100vw - 320px) / 1360) );
+      line-height: 120%;
+      color: #000; }
+  .footer__media {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 10px; }
+    .footer__media_item {
+      max-width: 30px;
+      -webkit-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
+      .footer__media_item:hover, .footer__media_item:focus {
+        -webkit-transform: scale(1.1);
+                transform: scale(1.1); }
+      .footer__media_item img {
+        width: 100%; }
+
+@media (max-width: 380px) {
+  .footer .menu__list {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+  .footer .menu__item:not(:last-child) {
+    margin-right: 0; }
+    .footer .menu__item:not(:last-child)::after {
+      display: none; } }
 
 /*# sourceMappingURL=style.css.map */
